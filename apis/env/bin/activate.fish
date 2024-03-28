@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/ubuntu/intersim_api_server/apis/env"
+set -gx VIRTUAL_ENV "/Users/zhaoyuan.jiang/Desktop/EECS_441/project_apis/intersim_api_server/apis/env"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

@@ -24,8 +24,8 @@ def speech_emotion_analysis(request):
     inference_pipeline = pipeline(
         task=Tasks.emotion_recognition,
         model="iic/emotion2vec_base_finetuned", model_revision="v2.0.4")
+    
     audio_bytes = base64.b64decode(base64_audio_text)
-
     rec_result = inference_pipeline(
         audio_bytes, output_dir="./outputs", granularity="utterance", extract_embedding=False)
     max_emotion_score = np.argmax(rec_result[0]["scores"])
