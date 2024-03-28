@@ -20,6 +20,5 @@ from app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('getchatts/', views.getchatts, name='getchatts'),
-    path('postchatt/', views.postchatt, name='postchatt'),
+    path('speech_emotion_analysis/', views.speech_emotion_analysis, name='speech_emotion_analysis'),
 ]

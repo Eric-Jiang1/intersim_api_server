@@ -3,7 +3,6 @@ from django.http import JsonResponse, HttpResponse
 from django.db import connection
 from django.views.decorators.csrf import csrf_exempt
 import json
-
 from modelscope.pipelines import pipeline
 from modelscope.utils.constant import Tasks
 import numpy as np
