@@ -15,7 +15,7 @@ def speech_emotion_analysis(request):
     # csrf exempt since the certificate is self-signed 
     if request.method != 'POST':
         return HttpResponse(status=404)
-
+    
     json_data = json.loads(request.body)
     base64_audio_text = json_data['audio']
 
