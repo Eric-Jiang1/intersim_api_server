@@ -30,13 +30,7 @@ def speech_emotion_analysis(request):
         audio_bytes, output_dir="./outputs", granularity="utterance", extract_embedding=False)
 
     response = {}
-
     for idx in range(len(rec_result[0]["labels"])):
         response[mapper[idx]] = rec_result[0]["scores"][idx]
-
-    # results = {
-    #     "emotion": mapper[max_emotion_score],
-    #     "confidence":rec_result[0]["scores"][max_emotion_score]
-    # }
 
     return JsonResponse(response)
