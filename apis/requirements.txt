@@ -1,6 +1,5 @@
 funasr
 modelscope
-fastapi 
 nest-asyncio 
 uvicorn
 python-multipart
