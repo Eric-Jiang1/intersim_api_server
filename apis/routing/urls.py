@@ -22,3 +22,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('speech_emotion_analysis/', views.speech_emotion_analysis, name='speech_emotion_analysis'),
 ]
+
