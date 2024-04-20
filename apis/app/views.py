@@ -19,8 +19,8 @@ def speech_emotion_analysis(request):
     json_data = json.loads(request.body)
     base64_audio_text = json_data['audio']
 
-    mapper = ["angry", "disgust", "fear", "happy",
-              "neutral", "other", "sad", "surprised", "unknown"]
+    mapper = ["anger", "disgust", "fear", "joyb",
+              "neutral", "other", "sadness", "surprise", "unknown"]
     inference_pipeline = pipeline(
         task=Tasks.emotion_recognition,
         model="iic/emotion2vec_base_finetuned", model_revision="v2.0.4")
@@ -28,11 +28,15 @@ def speech_emotion_analysis(request):
     audio_bytes = base64.b64decode(base64_audio_text)
     rec_result = inference_pipeline(
         audio_bytes, output_dir="./outputs", granularity="utterance", extract_embedding=False)
-    max_emotion_score = np.argmax(rec_result[0]["scores"])
 
-    results = {
-        "emotion": mapper[max_emotion_score],
-        "confidence":rec_result[0]["scores"][max_emotion_score]
-    }
+    response = {}
 
-    return JsonResponse(results)
+    for idx in range(len(rec_result[0]["labels"])):
+        response[mapper[idx]] = rec_result[0]["scores"][idx]
+
+    # results = {
+    #     "emotion": mapper[max_emotion_score],
+    #     "confidence":rec_result[0]["scores"][max_emotion_score]
+    # }
+
+    return JsonResponse(response)
