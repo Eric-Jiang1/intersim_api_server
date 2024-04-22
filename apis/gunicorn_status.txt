@@ -1,0 +1,24 @@
+● gunicorn.service - gunicorn daemon
+     Loaded: loaded (/etc/systemd/system/gunicorn.service; enabled; vendor preset: enabled)
+     Active: active (running) since Mon 2024-04-22 02:07:46 UTC; 5min ago
+TriggeredBy: ● gunicorn.socket
+   Main PID: 2184 (gunicorn)
+      Tasks: 18 (limit: 4666)
+     Memory: 1.3G
+        CPU: 1min 833ms
+     CGroup: /system.slice/gunicorn.service
+             ├─2184 /home/ubuntu/intersim_api_server/apis/env/bin/python /home/ubuntu/intersim_api_server/apis/env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/run/gunicorn.sock --timeout 300 routing.wsgi:application
+             ├─2185 /home/ubuntu/intersim_api_server/apis/env/bin/python /home/ubuntu/intersim_api_server/apis/env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/run/gunicorn.sock --timeout 300 routing.wsgi:application
+             ├─2186 /home/ubuntu/intersim_api_server/apis/env/bin/python /home/ubuntu/intersim_api_server/apis/env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/run/gunicorn.sock --timeout 300 routing.wsgi:application
+             └─2187 /home/ubuntu/intersim_api_server/apis/env/bin/python /home/ubuntu/intersim_api_server/apis/env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/run/gunicorn.sock --timeout 300 routing.wsgi:application
+
+Apr 22 02:08:44 ip-172-31-48-72 gunicorn[2185]: Warning, miss key in ckpt: modality_encoders.AUDIO.decoder.blocks.3.0.weight, mapped: modality_encoders.AUDIO.decoder.blocks.3.0.weight
+Apr 22 02:08:44 ip-172-31-48-72 gunicorn[2185]: Warning, miss key in ckpt: modality_encoders.AUDIO.decoder.blocks.3.0.bias, mapped: modality_encoders.AUDIO.decoder.blocks.3.0.bias
+Apr 22 02:08:44 ip-172-31-48-72 gunicorn[2185]: Warning, miss key in ckpt: modality_encoders.AUDIO.decoder.proj.weight, mapped: modality_encoders.AUDIO.decoder.proj.weight
+Apr 22 02:08:44 ip-172-31-48-72 gunicorn[2185]: Warning, miss key in ckpt: modality_encoders.AUDIO.decoder.proj.bias, mapped: modality_encoders.AUDIO.decoder.proj.bias
+Apr 22 02:09:02 ip-172-31-48-72 gunicorn[2185]: [524B blob data]
+Apr 22 02:09:02 ip-172-31-48-72 gunicorn[2185]: /home/ubuntu/intersim_api_server/apis/env/lib/python3.10/site-packages/urllib3/connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host '18.221.19.88'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+Apr 22 02:09:02 ip-172-31-48-72 gunicorn[2185]:   warnings.warn(
+Apr 22 02:09:05 ip-172-31-48-72 gunicorn[2187]: [486B blob data]
+Apr 22 02:09:06 ip-172-31-48-72 gunicorn[2187]: /home/ubuntu/intersim_api_server/apis/env/lib/python3.10/site-packages/urllib3/connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host '18.221.19.88'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+Apr 22 02:09:06 ip-172-31-48-72 gunicorn[2187]:   warnings.warn(

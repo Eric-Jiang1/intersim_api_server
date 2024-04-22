@@ -1,4 +1,4 @@
-#!/Users/zhaoyuan.jiang/Desktop/EECS_441/project_apis/intersim_api_server/apis/env/bin/python3.11
+#!/home/ubuntu/intersim_api_server/apis/env/bin/python
 
 import sys
 import json
