@@ -32,7 +32,7 @@ def actual_analysis(interview_id, question_id, audio_bytes):
     
         sending_result = {'response': response, 'interview_id':interview_id, 'question_id':question_id}
         print(sending_result)
-        url = 'https://18.221.19.88/post_speech_emotion_results/'
+        url = 'https://18.220.90.225/post_speech_emotion_results/'
         req_response = requests.post(url, json=sending_result, verify=False)
         print("sent with response of :", req_response)
 
